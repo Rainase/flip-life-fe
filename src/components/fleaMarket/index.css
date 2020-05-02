@@ -1,0 +1,16 @@
+.market-items-list-root {
+  display: flex;
+  flex-direction: column;
+  margin:20px;
+}
+.market-items-box {
+  display: flex;
+  flex-wrap: wrap;
+}
+.market-items-box>* {
+  flex: 1 1 200px;
+  margin: 10px;
+}
+.market-item {
+  margin: 10px;
+}

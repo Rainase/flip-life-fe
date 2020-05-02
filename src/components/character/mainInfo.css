@@ -1,0 +1,19 @@
+.mainInfo_root {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  top: 0;
+  color: #fff;
+  background-color: #444444;
+  width: 100%;
+  padding: .3rem;
+}
+.maintInfo_item {
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+  margin: 10px 0;
+}
+.maintInfo_item img {
+  height: 25px;
+}

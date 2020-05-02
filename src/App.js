@@ -1,24 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useGlobal } from 'reactn';
 import './App.css';
+import FleaMarket from './components/fleaMarket';
+import CharMainInfo from './components/character/mainInfo';
+import Inventory from './components/character/inventory';
+import { useStoreState } from 'easy-peasy';
+import GameNav from './components/GameNav';
+import GameField from './components/GameField';
+import { subPlaces } from './utils/gameFiledChecker';
 
 function App() {
+  const user = useStoreState(store => store.user)
+  const [storeItems] =  useGlobal('storeItems')
+  const { inventory } = useStoreState(store => store.user)
+  const { location } = useStoreState(store => store.user);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="flip-life">
+      <CharMainInfo charInfo={user}/>
+      <GameNav />
+      <GameField>
+      {location.subName === subPlaces.fleaMarket && (
+        <FleaMarket items={storeItems}>
+          <Inventory items={user.inventory.items} size={inventory.size}/>
+        </FleaMarket>)}
+      </GameField>
+
     </div>
   );
 }
