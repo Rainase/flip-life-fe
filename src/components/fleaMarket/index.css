@@ -14,3 +14,16 @@
 .market-item {
   margin: 10px;
 }
+.market_header {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.market_header_invent {
+  display: flex;
+  font-size: 1.2rem;
+  align-items: center;
+}
+.market_header img {
+  height: 35px;
+}

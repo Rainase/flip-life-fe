@@ -7,6 +7,7 @@ import { useStoreState } from 'easy-peasy';
 import GameNav from './components/GameNav';
 import GameField from './components/GameField';
 import { subPlaces } from './utils/gameFiledChecker';
+import InvetoryDialog from './components/InventoryDialog';
 
 function App() {
   const user = useStoreState(store => store.user)
@@ -19,11 +20,11 @@ function App() {
       <GameNav />
       <GameField>
       {location.subName === subPlaces.fleaMarket && (
-        <FleaMarket items={storeItems}>
-          <Inventory items={user.inventory.items} size={inventory.size}/>
+        <FleaMarket items={storeItems} inventoryHolder={inventory.size}>
+          {/* <Inventory items={user.inventory.items} size={inventory.size}/> */}
         </FleaMarket>)}
       </GameField>
-
+      
     </div>
   );
 }

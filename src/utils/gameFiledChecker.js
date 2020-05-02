@@ -10,3 +10,7 @@ const GameField = () => {
   const { places } = useStoreState(store => store.locations);
 
 }
+export const itemsCount = (array) => {
+  let itemCount = array.reduce((a, b) => a + (b.count || 0), 0)
+  return itemCount
+}
