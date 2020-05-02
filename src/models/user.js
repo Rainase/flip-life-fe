@@ -9,6 +9,9 @@ export default {
     in_bank: 1245,
     age: 21,
     location: {name:'Home', id:3, subPlaceId: 5, subName: 'Dumbster'},
+    gameLocation: {
+      name: 'Witchfield',
+    },
     inventory: {
       size: 14,
       items: []
@@ -59,6 +62,8 @@ export default {
   subNav: action((state, subPlace) => {
     state.location.subPlaceId = subPlace.subPlaceId
     state.location.subName = subPlace.subName
-    console.log(state.location);
+  }),
+  gameNav: action((gameLoc, newGameLoc) => {
+    gameLoc.gameLocation = newGameLoc;
   })
 }

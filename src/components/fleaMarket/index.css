@@ -27,3 +27,8 @@
 .market_header img {
   height: 35px;
 }
+/* TODO style the GameLocation dropdown */
+.market_header select {
+  font-size: 1.2rem;
+  
+}

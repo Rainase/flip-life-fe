@@ -1,4 +1,4 @@
-import React, { useGlobal } from 'reactn';
+import React, { useGlobal, useEffect } from 'reactn';
 import './App.css';
 import FleaMarket from './components/fleaMarket';
 import CharMainInfo from './components/character/mainInfo';
@@ -13,7 +13,9 @@ function App() {
   const user = useStoreState(store => store.user)
   const [storeItems] =  useGlobal('storeItems')
   const { inventory } = useStoreState(store => store.user)
-  const { location } = useStoreState(store => store.user);
+  const { location, gameLocation } = useStoreState(store => store.user);
+
+  
   return (
     <div className="flip-life">
       <CharMainInfo charInfo={user}/>

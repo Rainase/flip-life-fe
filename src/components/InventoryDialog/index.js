@@ -1,4 +1,5 @@
 import React  from 'react';
+import { bgColor } from '../../utils/classNames';
 import { useStoreActions ,useStoreState } from 'easy-peasy';
 import './index.css';
 
@@ -9,7 +10,7 @@ const InvetoryDialog = ({ header, body, actions}) => {
     return(
     <div style={{animationDuration: '0.2s'}} className={`dialog_root animated  ${modalState.isOpen? 'fadeIn': 'not_active fadeOut'}`}>
         <div className='backDrop' onClick={() => setModal(!modalState)}></div>
-            <div className='dialog_container'>
+            <div className={`dialog_container`}>
             <div className='dialog_paper'>
                 <div className="dialog-title">
                 {header}

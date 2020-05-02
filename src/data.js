@@ -9,3 +9,12 @@ for (let i = 0; i < totalItems; i ++ ){
   }
   storeItems.push(items);
 }
+
+export const rndPlaces = [
+  { id: faker.random.uuid(), name: 'Witchfield'},
+  { id: faker.random.uuid(), name: 'Janwall'},
+  { id: faker.random.uuid(), name: 'Stoneness'},
+  { id: faker.random.uuid(), name: 'Estermount'},
+  { id: faker.random.uuid(), name: 'Goldsnow'},
+  { id: faker.random.uuid(), name: 'Aelbarrow'}
+]

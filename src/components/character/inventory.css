@@ -3,5 +3,17 @@
   max-width: 200px;
   padding: 10px;
   background-color: #00b6e3;
-  color: #fff
+  color: #fff;
+  font-size: 1rem;
+}
+.invetory_header {
+  width: 300px;
+  display: flex;
+  font-size: 1.2rem;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.invetory_header img {
+  height: 80px;
 }

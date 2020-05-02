@@ -1,8 +1,9 @@
 import React from 'react';
 import { useStoreActions } from 'easy-peasy';
-import { bgColor } from '../../utils/classNames';
+import { bgColor, btSize } from '../../utils/classNames';
 import './inventory.css';
-import Paper from '../Paper';
+import inventoryBag from '../../assets/SVG/charInfo/inventoryBag.svg';
+import Button from '../Button';
 
 const Inventory = ({items, size}) => {
   const sellItem = useStoreActions(actions => actions.user.sellItems)
@@ -14,16 +15,28 @@ const Inventory = ({items, size}) => {
     return itemCount
   }
   return ( 
-    <Paper bg={bgColor.secondary}>
-      <p>Bag size: {itemsCount()}/{size}</p>
-      {
-      items.length > 0 ? items.map(item => 
-        <>
-        <li>{item.name} {item.count ? item.count : ''}<button onClick={() => sellItem({name:item.name, price: item.price})}>sell</button></li>
-        </>
-      ) : 'Nothing in the bag'
-      }
-    </Paper>
+      <div className='invetory_root'>
+        <div className='invetory_header'>
+          <img src={inventoryBag} />
+          <div>Bag size: {itemsCount()}&nbsp;/&nbsp;{size}</div>
+        </div>
+        <div className='invetory_items_root'>
+          {
+          items.length > 0 ? items.map(item => 
+            <div key={item.id} className='invetory_item'>
+              {item.name} {item.count ? item.count : ''}&nbsp;
+              <Button
+                size={btSize.small}
+                bg={bgColor.secondary}
+                onClick={() => sellItem({name:item.name, price: item.price})}>
+                sell
+              </Button>
+            </div>
+            
+          ) : 'Nothing in the bag'
+          }
+        </div>
+    </div>
    );
 }
  
