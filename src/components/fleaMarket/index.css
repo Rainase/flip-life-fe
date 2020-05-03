@@ -1,14 +1,24 @@
-.market-items-list-root {
-  display: flex;
-  flex-direction: column;
+.market_items_list_root {
+  display: inline-block;
+  max-width: 630px;
   margin:20px;
+  border: 2px solid #0E9FC4;
+  box-shadow: 0 3px 6px rgba(4, 96, 150, 0.16), 0 3px 6px rgba(78, 181, 241, 0.23);
+}
+.market_items_header_title {
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  padding: 15px 0;
+  background-color: #0E9FC4;
 }
 .market-items-box {
   display: flex;
   flex-wrap: wrap;
 }
 .market-items-box>* {
-  flex: 1 1 200px;
+  flex: 1 1 auto;
   margin: 10px;
 }
 .market-item {

@@ -7,8 +7,11 @@ import { itemsCount } from '../../utils/gameFiledChecker';
 import { rndPlaces } from '../../data';
 import inventoryBag from '../../assets/SVG/charInfo/inventoryBag.svg';
 import InvetoryDialog from '../InventoryDialog';
-import './index.css';
 import Inventory from '../character/inventory';
+
+import './index.css';
+import HorizontalScroll from '../HorizontalScroll';
+import MarketItem from '../MarketItem';
 
 
 const FleaMarket = ({items, children, inventoryHolder }) => {
@@ -25,7 +28,7 @@ const FleaMarket = ({items, children, inventoryHolder }) => {
   return (
     <div>
       <InvetoryDialog body={<Inventory items={inventory.items} size={inventory.size}/>} />
-      <Paper bg={bgColor.primary}>
+      <Paper bg={bgColor.info}>
         <div className='market_header'>
         <h2 style={{marginLeft: 20}}>FleaMarket</h2>
         <div
@@ -42,22 +45,40 @@ const FleaMarket = ({items, children, inventoryHolder }) => {
           </select>
         </div>
         </div>
-        <div className='market-items-list-root'>
+        <HorizontalScroll>
+        <div className='market_items_list_root'>
+          <div className='market_items_header_title'>
+            electronics
+          </div>
           <div className='market-items-box'>
             {items.map(item => (
-              <div key={item.id}>
-                {item.name} {item.value}&nbsp;
-              <Button
-                bg={bgColor.info}
-                size={btSize.small}
-                onClick={() => buyItems({id: item.id, name: item.name, count: 1, price: item.value},)}>
-                buy
-              </Button>
-              </div>
+              <MarketItem
+                key={item.id}
+                title={item.name}
+                price={item.value}
+                onClick={() => buyItems({id: item.id, name: item.name, count: 1, price: item.value},)}
+              />
             ))}
           </div>
         </div>
         {children}
+        <div className='market_items_list_root'>
+          <div className='market_items_header_title'>
+            collectibles
+          </div>
+          <div className='market-items-box'>
+            {items.map(item => (
+              <MarketItem
+                key={item.id}
+                title={item.name}
+                price={item.value}
+                onClick={() => buyItems({id: item.id, name: item.name, count: 1, price: item.value},)}
+              />
+            ))}
+          </div>
+        </div>
+        {children}
+        </HorizontalScroll>
       </Paper>
     </div>
    );

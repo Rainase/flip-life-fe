@@ -1,0 +1,4 @@
+.hor_scroll_root {
+  overflow: scroll;
+  white-space: nowrap;
+}

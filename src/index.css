@@ -33,6 +33,10 @@ button:focus {
   background-color: #00b6e3;
   color: #fff;
 }
+.warning_bg {
+  background-color: #ff8833;
+  color: #fff;
+}
 .default_white {
   background-color: #fff;
   color: #444444;

@@ -4,9 +4,9 @@ import mockService from "../mockService";
 export default {
     name: 'Rain',
     lvl: 1,
-    reputation: 43563,
+    reputation: 137,
     cash: 4000,
-    in_bank: 1245,
+    in_bank: '12K',
     age: 21,
     location: {name:'Home', id:3, subPlaceId: 5, subName: 'Dumbster'},
     gameLocation: {

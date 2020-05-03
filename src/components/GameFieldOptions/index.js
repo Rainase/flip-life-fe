@@ -18,7 +18,7 @@ const GameFieldOptions = ({ children }) => {
     subLinks()
   },[location])
   return ( 
-    <Paper bg={bgColor.primary}>
+    <Paper bg={bgColor.info}>
     <div className='field_options_root'>
       {subLinks().map(link => (
         <div key={link.id} className='field_option_item'

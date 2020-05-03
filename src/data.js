@@ -1,5 +1,5 @@
 const faker = require('faker');
-let totalItems = 20;
+let totalItems = 8;
 export const storeItems = [];
 for (let i = 0; i < totalItems; i ++ ){
   const items = {
